@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0a1828; /* Background */
+  --secondary-color: #bfa181; /* Font */
+  --accent-color: #0a1828; /* Button */
+  --shadow-color: #bfa181; /* Shadows */
+  --primary-light: #0a1828; /* Light shade of primary color */
+
+body {
+  font-family: "Finger Paint", "Arial", sans-serif;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+h1 {
+  font-size: 54px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.container {
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+
+#home-page,
+#game-page {
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+#home-page {
+  background: var(--accent-color);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 300px var(--shadow-color);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-page h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+button {
+  background: var(--accent-color);
+  border: none;
+  color: var(--secondary-color);
+  padding: 15px 30px;
+  font-size: 1em;
+  font-family: "Finger Paint", "Arial", sans-serif; /* Ensure the font is applied */
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 7px var(--shadow-color);
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+button:active {
+  background: var(--secondary-color);
+  transform: scale(0.95);
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: var(--primary-light);
+  border: 3px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#message-box {
+  display: none;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: var(--secondary-color);
+  box-shadow: 0 0 15px var(--shadow-color);
+  margin: 20px auto;
+}
+
+#message-box.show {
+  display: block;
+  animation: showMessage 0.5s ease-out;
+}
+
+@keyframes showMessage {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#restart-btn,
+#home-btn {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+#restart-btn:hover,
+#home-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+#restart-btn:active,
+#home-btn:active {
+  background: var(--shadow-color);
+}
